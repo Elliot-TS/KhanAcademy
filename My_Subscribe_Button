@@ -1,0 +1,70 @@
+
+var link = document.createElement("a");
+link.href = "https://www.khanacademy.org/computer-programming/subscribe-to-khangressman/6143912861433856";
+
+var p = document.createElement("p");
+p.innerText = "Subscribe to ";
+
+var signature = document.createElement("img");
+signature.src = "https://www.khanacademy.org/computer-programming/my-ka-signature/5467796366983168/5724160613416960.png";
+
+var subscribeImg = document.createElement("img");
+subscribeImg.src = "https://www.khanacademy.org/computer-programming/subscribe-to-khangressman/6143912861433856/5724160613416960.png";
+
+// Style
+
+link.addEventListener ("mouseenter", function () {
+    Object.assign(link.style, {
+        width : "63%",
+    });
+    Object.assign(signature.style, {
+        display : "block",
+    });
+    Object.assign(subscribeImg.style, {
+        //left : "30%",
+    });
+});
+var leaveEventFunc = function () {
+    Object.assign(p.style, {
+        float : "left",
+    });
+    Object.assign(link.style, {
+        border : "2px solid rgb(31, 171, 84)",
+        background : "linear-gradient(to right, rgb(31, 171, 84) -15%, white 61%)",
+        borderRadius : "0 100px 100px 0",
+        paddingTop : "100px",
+        padding : "10px",
+        width : "150px",
+        height : "70px",
+        display : "block",
+        position : "fixed",
+        bottom : "0px",
+        left : "0px",
+    });
+    Object.assign(signature.style, {
+        width : "150px",
+        clip : "rect(0px, 141px, 68px, 0px)",
+        position : "absolute",
+        right : "10px",
+        display : "none",
+    });
+    Object.assign(subscribeImg.style, {
+        width : "100px",
+        position : "absolute",
+        top : "-23px",
+        left : "30px",
+        clip : "rect(36px,100px,100px,0px)",
+    });
+};
+leaveEventFunc();
+link.addEventListener("mouseleave", leaveEventFunc);
+
+
+
+//link.appendChild(p);
+link.appendChild(subscribeImg)
+link.appendChild(signature);
+
+document.body.appendChild(link);
+document.body.style.paddingBottom = "100px";
+
